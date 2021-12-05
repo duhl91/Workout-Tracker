@@ -3,9 +3,10 @@ const db = require('../models');
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/workout_tracker_db', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
 });
 
 const workoutSeed = [
